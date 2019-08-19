@@ -26,7 +26,7 @@ const generatePalette = (starterPalette) => {
 
     starterPalette.colors.forEach(color => {
         let scale = generateScale(color.color, 10).reverse();
-        scale.forEach((item, i) => {
+        scale.forEach((item, i) => {    //TODO: Think of better way to handle this!
             newPalette.colors[levels[i]].push({
                 name: `${color.name} ${levels[i]}`,
                 id: color.name.toLowerCase().replace(/ /g, "-"),
