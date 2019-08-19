@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ColorBox.scss';
 import CopyToClipBoard from 'react-copy-to-clipboard';
 
-const ColorBox = ({ name, background }) => {
+const ColorBox = ({ name, background, copyFormat }) => {
   const [copied, setCopied] = useState(false);
 
   const changeCopyState = () => {
