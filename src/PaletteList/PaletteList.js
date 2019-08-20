@@ -29,6 +29,24 @@ const styles = {
         display: "grid",
         gridTemplateColumns: "repeat(3, 30%)",
         gridGap: "5%"
+    },
+    footer: {
+        position: "fixed",
+        bottom: "0",
+        left: "0",
+        width: "100%",
+        height: "4vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "2rem",
+        color: "black",
+        "& a": {
+            textDecoration: "none",
+            "&:visited": {
+                color: "black"
+            }
+        }
     }
 }
 const PaletteList = (props) => {
@@ -45,6 +63,9 @@ const PaletteList = (props) => {
                     {paletteLinks}
                 </div>
             </div>
+            <footer className={classes.footer}>
+                <a href="https://github.com/RGnt/colors-app"><i className="fa fa-github"></i></a>
+            </footer>
         </div>
     );
 };

@@ -41,9 +41,8 @@ const styles = {
     }
 }
 const MiniPalette = ({ classes, palette }) => {
-    console.log(palette.palette);
     const miniColorBoxes = palette.palette.map(color => <div key={`${palette.palette}${color.name}`} className={classes.miniColor} style={{ backgroundColor: color.color }} />) //TODO: Think of changing the key later!
-    console.log(miniColorBoxes);
+
     return (
         <Link to={`/palette/${palette.palId}`}>
             <div className={classes.root}>
