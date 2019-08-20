@@ -7,7 +7,7 @@ const Palette = ({ palette }) => {
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState('hex');
   const [snackBarOpen, setSnackBarStatus] = useState(false);
-
+  const [copiedIsOpen, setCopiedIsOpen] = useState(false);
   const changeFormat = (e) => {
     setFormat(e.target.value);
     setSnackBarStatus(true);
@@ -20,12 +20,18 @@ const Palette = ({ palette }) => {
     setSnackBarStatus(val)
   }
 
+  const copiedIsOpenHandler = (val) => {
+    setCopiedIsOpen(!copiedIsOpen);
+  }
   const colorBoxes = palette.colors[level].map(color => (
     <ColorBox
       key={color.id}
       background={color[format]}
       name={color.name}
-      copyFormat={format} />
+      copyFormat={format}
+      copiedIsOpen={copiedIsOpen}
+      handleCopiedOpen={copiedIsOpenHandler}
+    />
   ));
 
   return (

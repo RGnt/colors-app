@@ -7,7 +7,10 @@ const ColorBox = ({ name, background, copyFormat }) => {
 
   const changeCopyState = () => {
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
   };
   return (
     <CopyToClipBoard text={background} onCopy={changeCopyState}>
@@ -28,7 +31,7 @@ const ColorBox = ({ name, background, copyFormat }) => {
         </div>
         <span className="see-more">MORE</span>
       </div>
-    </CopyToClipBoard>
+    </CopyToClipBoard >
   );
 };
 export default ColorBox;
