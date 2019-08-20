@@ -1,15 +1,18 @@
 import React from 'react';
 import { Select } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
 import { Snackbar } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
 import { Slider } from '@material-ui/core/'
+import CloseIcon from '@material-ui/icons/Close';
+
 import './Navbar.scss';
 
 
 const Navbar = ({ level, changeLevel, handleChange, currentFormat, snackBarOpen, snackBarHandler }) => {
-
+    const valuetext = (value) => {
+        return `{value}`
+    }
     return (
         <header className="Navbar">
             <div className="logo">
@@ -20,9 +23,12 @@ const Navbar = ({ level, changeLevel, handleChange, currentFormat, snackBarOpen,
                 <div className='slider'>
                     <Slider
                         defaultValue={level}
+                        aria-labelledby="color-level-slider"
+                        getAriaValueText={valuetext}
+                        step={100}
+                        marks
                         min={100}
                         max={900}
-                        step={100}
                         onChange={changeLevel}
                     />
                 </div>

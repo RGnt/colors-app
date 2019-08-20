@@ -40,9 +40,10 @@ const Palette = ({ palette }) => {
         snackBarOpen={snackBarOpen}
         snackBarHandler={snackBarHandler}
       />
-      {/* Navbar here */}
       <div className="Palette-colors">{colorBoxes}</div>
-      {/* footer eventually */}
+      <footer className="Palette-footer">
+        {palette.paletteName}<span className="emoji">{palette.emoji}</span>
+      </footer>
     </div>
   );
 };
