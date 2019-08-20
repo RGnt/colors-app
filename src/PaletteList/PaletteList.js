@@ -1,15 +1,50 @@
 import React from 'react';
 import MiniPalette from '../MiniPalette/MiniPalette';
+import { withStyles } from '@material-ui/styles';
 
-const PaletteList = ({ palettes }) => {
-    console.log('Palette List', palettes)
-    const paletteLinks = palettes.map(palette => <MiniPalette key={palette.palId} palette={palette} emoji={palette.emoji} />)
-    console.log('Palette links', paletteLinks)
+const styles = {
+    root: {
+        background: "#b0dbd8",
+        height: "100%",
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "center"
+    },
+    container: {
+        width: "50%",
+        display: "flex",
+        alignItems: "flex-start",
+        flexDirection: "column",
+        flexWrap: "wrap"
+    },
+    nav: {
+        display: "flex",
+        width: "100%",
+        justifyContent: "space-between",
+        color: "white"
+    },
+    palettes: {
+        boxSizing: "border-box",
+        width: "100",
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 30%)",
+        gridGap: "5%"
+    }
+}
+const PaletteList = (props) => {
+    const { palettes, classes } = props;
+    const paletteLinks = palettes.map(palette => <MiniPalette key={palette.palId} palette={palette} />)
     return (
-        <div>
-            <h1>React Colors</h1>
-            {paletteLinks}
+        <div className={classes.root}>
+            <div className={classes.container}>
+                <nav className={classes.nav}>
+                    <h1>React Colors</h1>
+                </nav>
+                <div className={classes.palettes}>
+                    {paletteLinks}
+                </div>
+            </div>
         </div>
     );
 };
-export default PaletteList;
+export default withStyles(styles)(PaletteList);

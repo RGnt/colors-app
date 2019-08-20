@@ -3,10 +3,7 @@ import ColorBox from '../ColorBox/ColorBox';
 import Navbar from '../Navbar/Navbar';
 import './Palette.scss';
 
-//TODO: Look for better slider solution! Current one uses unsafe lifeCycleMethods!
-
 const Palette = ({ palette }) => {
-  console.log('Got:', palette);
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState('hex');
   const [snackBarOpen, setSnackBarStatus] = useState(false);

@@ -30,7 +30,6 @@ const styles = {
     },
 }
 const MiniPalette = ({ classes, palette }) => {
-    console.log(palette);
     return (
         <Link to={`/palette/${palette.palId}`}>
             <div className={classes.root}>
