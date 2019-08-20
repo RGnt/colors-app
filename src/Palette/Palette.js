@@ -15,8 +15,8 @@ const Palette = ({ palette }) => {
     setSnackBarStatus(true);
     setTimeout(() => setSnackBarStatus(false), 2500);
   }
-  const changeLevel = (newLevel) => {
-    setLevel(newLevel);
+  const changeLevel = (event, value) => {
+    setLevel(value);
   }
   const snackBarHandler = (val) => {
     setSnackBarStatus(val)

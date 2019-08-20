@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import Select from '@material-ui/core/Select';
+import React from 'react';
+import { Select } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { Snackbar } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+import { Slider } from '@material-ui/core/'
 import './Navbar.scss';
-import { format } from 'upath';
+
 
 const Navbar = ({ level, changeLevel, handleChange, currentFormat, snackBarOpen, snackBarHandler }) => {
 
     return (
         <header className="Navbar">
             <div className="logo">
-                <a href="#">reactcolorpicker</a>
+                <a href="/">reactcolorpicker</a>
             </div>
             <div className="slider-container">
                 <span>Level: {level}</span>
@@ -24,7 +23,8 @@ const Navbar = ({ level, changeLevel, handleChange, currentFormat, snackBarOpen,
                         min={100}
                         max={900}
                         step={100}
-                        onAfterChange={changeLevel} />
+                        onChange={changeLevel}
+                    />
                 </div>
             </div>
             <div className="select-container">
