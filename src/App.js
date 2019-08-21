@@ -10,7 +10,20 @@ const App = () => {
   return (
     <Switch>
 
-      <Route exact path="/" render={() => <PaletteList palettes={seedColors.map(palette => { return { palId: palette.id, palName: palette.paletteName, palette: palette.colors, emoji: palette.emoji } })} />} />
+      <Route exact path="/" render={(routeProps) =>
+        <PaletteList
+          palettes={seedColors
+            .map(palette => {
+              return {
+                palId: palette.id,
+                palName: palette.paletteName,
+                palette: palette.colors,
+                emoji: palette.emoji
+              }
+            })
+          }
+          {...routeProps}
+        />} />
       <Route exact path="/palette/:id" render={
         (routeProps) =>
           <Palette

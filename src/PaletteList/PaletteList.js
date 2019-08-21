@@ -51,7 +51,13 @@ const styles = {
 }
 const PaletteList = (props) => {
     const { palettes, classes } = props;
-    const paletteLinks = palettes.map(palette => <MiniPalette key={palette.palId} palette={palette} />)
+
+    const goToPalette = (id) => {
+        props.history.push(`/palette/${id}`)
+    }
+
+    const paletteLinks = palettes.map(palette => <MiniPalette key={palette.palId} palette={palette} handleClick={() => goToPalette(palette.palId)} />)
+
 
     return (
         <div className={classes.root}>
